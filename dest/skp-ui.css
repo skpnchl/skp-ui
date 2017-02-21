@@ -199,3 +199,12 @@ input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
   -webkit-appearance: textfield; }
+
+.clearfix:before, .clearfix:after {
+  content: '.';
+  display: block;
+  height: 0;
+  visibility: hidden; }
+
+.clearfix:after {
+  clear: both; }
