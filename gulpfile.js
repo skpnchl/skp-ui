@@ -7,7 +7,7 @@ ts = require('gulp-typescript');
 
 
 gulp.task('sass',function(){
-	return gulp.src('./sass/skp-ui.sass')
+	return gulp.src('./sass/skp-ui.scss')
 		.pipe(sass())
 		.pipe(gulp.dest('./dest'))
 		.pipe(browserSync.stream());
@@ -30,5 +30,5 @@ gulp.task('default', function(){
     server: true
   });
 
-	gulp.watch(['sass/moduls/*.sass', 'sass/util/*.sass'], ['sass']);
+	gulp.watch(['sass/moduls/*.scss', 'sass/util/*.scss'], ['sass']);
 });
