@@ -16,6 +16,12 @@ local.properties
 .settings/
 .loadpath
 
+#npm package
+node_modules/
+
+#IDE
+.idea
+
 # External tool builders
 .externalToolBuilders/
 
