@@ -1,0 +1,19 @@
+@mixin contain() {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+  @each $prep, $val in $screen-break {
+    @include media-query($val) {
+      $p: map_get($contain-padding, $prep);
+      width: map_get($contain-max-widths, $prep);
+      max-width: 100%;
+      padding-left: $p/2;
+      padding-right: $p/2;
+    }
+  }
+}
+
+.contain {
+  @include contain();
+}

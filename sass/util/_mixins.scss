@@ -1,0 +1,6 @@
+//mixins
+@mixin media-query($val) {
+  @media (min-width: $val) {
+    @content
+  }
+}

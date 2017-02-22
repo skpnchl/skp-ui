@@ -1,0 +1,38 @@
+.grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.grid > .#{$column-prefix},
+.grid > [class*="#{$column-prefix}-"] {
+  flex-grow: 1;
+  padding: 0 $clmn-padding/2;
+}
+
+
+// commen column like - clmn-1
+@for $i from 1 through $column {
+  .#{$column-prefix}-#{$i} {
+    flex: 1 percentage((1 / $column) * $i);
+  }
+}
+
+
+//diffrent screen column
+@mixin grid-clmn($key) {
+  @for $i from 1 through $column {
+    .#{$column-prefix}-#{$key}-#{$i} {
+      flex: 1 percentage((1 / $column) * $i);
+    }
+  }
+}
+
+@each $key, $val in $screen-break {
+  @media (max-width: $val) {
+    @include grid-clmn($key)
+  }
+}

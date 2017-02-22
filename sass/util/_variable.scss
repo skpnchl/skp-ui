@@ -2,10 +2,36 @@
 
 $google-font: Muli;
 $table-back: #4d4d4d;
-
+$column: 12;
 $list-style: none;
 
-$default-object: (mobile: 576px,
+$column-prefix: clmn;
+
+$screen-break: (
+        mobile: 576px,
         teblet: 768px,
-        desktop: 992px,
-        larg: 1200px);
+        laptop: 1024px,
+        desktop: 1224px,
+        larg: 1360px,
+        ex-larg: 1440px,
+);
+
+$contain-max-widths: (
+        mobile: 540px,
+        teblet: 750px,
+        laptop: 989px,
+        desktop: 1189px,
+        larg:1325px,
+        ex-larg: 1405px,
+);
+
+$contain-padding: (
+        mobile: 20px,
+        teblet: 20px,
+        laptop: 20px,
+        desktop: 20px,
+        larg: 20px,
+        ex-larg: 20px,
+);
+
+$clmn-padding: 10px;
