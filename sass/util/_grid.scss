@@ -13,13 +13,35 @@
   padding: 0 $clmn-padding/2;
 }
 
-
 // commen column like - clmn-1
+.#{$column-prefix} {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+}
+.#{$column-prefix}-auto {
+  flex: 0 0 auto;
+  width: auto;
+}
 @for $i from 1 through $column {
   .#{$column-prefix}-#{$i} {
     flex: 1 percentage((1 / $column) * $i);
   }
 }
+
+
+// LEFT RIGHT
+@mixin lf($prop, $class-name){
+  @for $i from 0 through $column{
+    .#{$class-name}-#{$i}{
+      #{$prop}: percentage((1 / $column) * $i);
+    }
+  }
+}
+
+@include lf(right, right);
+@include lf(left, left);
+@include lf(margin-left, offset);
 
 
 //diffrent screen column
@@ -33,6 +55,18 @@
 
 @each $key, $val in $screen-break {
   @media (max-width: $val) {
-    @include grid-clmn($key)
+    .#{$column-prefix}-#{$key} {
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+    .#{$column-prefix}-#{$key}-auto {
+      flex: 0 0 auto;
+      width: auto;
+    }
+    @include grid-clmn($key);
+    @include lf(right, right-#{$key});
+    @include lf(left, left-#{$key});
+    @include lf(margin-left, offset-#{$key});
   }
 }

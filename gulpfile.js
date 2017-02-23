@@ -4,18 +4,28 @@ sass = require('gulp-sass'),
 watch = require('gulp-watch'),
 browserSync = require('browser-sync'),
 ts = require('gulp-typescript'),
-prefix = require('gulp-autoprefixer');
+prefix = require('gulp-autoprefixer'),
+cleanCSS = require('gulp-clean-css');
 
 
 gulp.task('sass',function(){
 	return gulp.src('./sass/skp-ui.scss')
-		.pipe(sass())
+		.pipe(sass({
+		    minify: true
+        }))
         .pipe(prefix({
             browsers: ['last 2 versions'],
             cascade: false
         }))
 		.pipe(gulp.dest('./dest'))
 		.pipe(browserSync.stream());
+});
+
+
+gulp.task('minify', function() {
+    return gulp.src('dest/*.css')
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest('dest/min/'));
 });
 
 
