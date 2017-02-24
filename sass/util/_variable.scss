@@ -3,7 +3,7 @@
 //font
 $google-font: Muli;
 $global-font:
-  // Safari for OS X and iOS (San Francisco)
+        // Safari for OS X and iOS (San Francisco)
         -apple-system,
           // Chrome >= 56 for OS X (San Francisco), Windows, Linux and Android
         system-ui,
@@ -15,11 +15,17 @@ $global-font:
         "Roboto",
           // Basic web fallback
         "Helvetica Neue", Arial, sans-serif !default;
+
+// prifex
+$column-prefix: cl;
+$heading-pre: heading;
+
+
+
 $table-back: #4d4d4d;
 $column: 12;
 $list-style: none;
 
-$column-prefix: cl;
 
 $screen-break: (
         m: 576px,
@@ -68,7 +74,6 @@ $width-height: (25, 50, 75, 100);
 //display
 $display: (block, inline, inline-block, none);
 
-$heading-pre: heading;
 
 //list style
 $list-style-type : (circle, disc, decimal, square);
@@ -94,7 +99,7 @@ $text-align: (justify, left, right, center, inherit);
 $font-weight: (bolder, bold, normal, lighter, inherit);
 
 
-// Z index 
+// Z index
 $zi-dropdown-backdrop:  990 !default;
 $zi-navbar:            1000 !default;
 $zi-dropdown:          1000 !default;
