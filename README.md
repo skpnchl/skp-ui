@@ -273,21 +273,28 @@ based on flex box
 
 **like**
 
+
+```
 <div class="grid">
 	<div class="cl"></div>
 	<div class="cl"></div>
 	<div class="cl"></div>
 	<div class="cl"></div>
 </div>
+```
+
 
 **and also**
 
+```
 <div class="grid">
 	<div class="cl-2"></div>
 	<div class="cl"></div>
 	<div class="cl-6"></div>
 	<div class="cl"></div>
 </div>
+
+```
 
 #### responsive
 
