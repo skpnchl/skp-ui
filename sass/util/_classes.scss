@@ -9,11 +9,25 @@
   border-radius: 50%;
 }
 
-$display: (block, inline, inline-block);
+.img-full {
+  max-width: 100%;
+  height: auto;
+}
 
+.select-none {
+  user-select: none;
+}
+
+//display property
 @each $prop in $display {
   .#{$prop} {
     display: $prop !important;
+  }
+}
+
+@for $i from 1 through 5 {
+  .#{$heading-pre}-#{$i} {
+    font-size: (6em/5)*$i;
   }
 }
 
@@ -58,7 +72,7 @@ $display: (block, inline, inline-block);
       #{$prop}: $color;
     }
   } @else if ($prop == color) {
-    .tx-#{$sel} {
+    .txt-#{$sel} {
       #{$prop}: $color;
     }
   } @else {
@@ -83,7 +97,7 @@ $display: (block, inline, inline-block);
   .mh-#{$val} {
     max-height: percentage($val/100);
   }
-  .w-#{$val} {
+  .h-#{$val} {
     height: percentage($val/100);
   }
 }
@@ -164,4 +178,68 @@ $display: (block, inline, inline-block);
 
 .font-italic {
   font-style: italic;
+}
+
+//ul ol
+
+@each $val in $list-style-type {
+  .list-#{$val} {
+    list-style-type: $val;
+  }
+}
+
+//child ol ul margin
+li > ul, li > ol {
+  margin-left: $olulm;
+}
+
+.box-shadow-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.box-shadow-2 {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.box-shadow-3 {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.box-shadow-4 {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.box-shadow-5 {
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+//radius 5 10 ....
+@mixin b($i, $p, $c) {
+  .border-radius-#{$c}-#{$i} {
+    @if ($p=="top") {
+      border-radius: ($radius * $i) ($radius * $i) 0 0;
+    } @else if ($p=="right") {
+      border-radius: 0 ($radius * $i) ($radius * $i) 0;
+    } @else if ($p=="bottom") {
+      border-radius: 0 0 ($radius * $i) ($radius * $i);
+    } @else if ($p=="left") {
+      border-radius: ($radius * $i) 0 0 ($radius * $i);
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  @include b($i, top, t);
+  @include b($i, right, r);
+  @include b($i, bottom, b);
+  @include b($i, left, l);
+
+  .border-radius-#{$i} {
+    border-radius: ($radius * $i);
+  }
+}
+
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
 }

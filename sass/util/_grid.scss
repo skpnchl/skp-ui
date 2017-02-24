@@ -69,6 +69,13 @@
     @include lf(left, left-#{$key});
     @include lf(margin-left, offset-#{$key});
     @include flex(-#{$key}-);
-    @include text-align(-#{$key}-)
+    @include text-align(-#{$key}-);
+    .none-#{$key} {
+      display: none;
+    }
+    .margin-auto-#{$key}{
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 }

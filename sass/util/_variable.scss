@@ -1,6 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Muli|Raleway');
 
+//font
 $google-font: Muli;
+$global-font:
+  // Safari for OS X and iOS (San Francisco)
+        -apple-system,
+          // Chrome >= 56 for OS X (San Francisco), Windows, Linux and Android
+        system-ui,
+          // Chrome < 56 for OS X (San Francisco)
+        BlinkMacSystemFont,
+          // Windows
+        "Segoe UI",
+          // Android
+        "Roboto",
+          // Basic web fallback
+        "Helvetica Neue", Arial, sans-serif !default;
 $table-back: #4d4d4d;
 $column: 12;
 $list-style: none;
@@ -34,6 +48,8 @@ $contain-padding: (
         xlr: 20px,
 );
 
+
+
 $clmn-padding: 10px;
 
 $color-warning: (
@@ -42,11 +58,20 @@ primary: #007AFF,
 success: #4CD964,
 info: #34AADC,
 warning: #FFCC00,
-danger: #FF3A2D
+danger: #FF3A2D,
+        white: #fff,
+        black: #000
 );
 
 $width-height: (25, 50, 75, 100);
 
+//display
+$display: (block, inline, inline-block, none);
+
+$heading-pre: heading;
+
+//list style
+$list-style-type : (circle, disc, decimal, square);
 
 //margin and padding
 $mp: (
@@ -66,4 +91,24 @@ $xy: (x, y);
 
 $text-transform: (lowercase, uppercase, capitalize);
 $text-align: (justify, left, right, center, inherit);
-$font-weight: (bolder, bold, normal, lighter, inherit)
+$font-weight: (bolder, bold, normal, lighter, inherit);
+
+
+// Z index 
+$zi-dropdown-backdrop:  990 !default;
+$zi-navbar:            1000 !default;
+$zi-dropdown:          1000 !default;
+$zi-fixed:             1030 !default;
+$zi-sticky:            1030 !default;
+$zi-modal-backdrop:    1040 !default;
+$zi-modal:             1050 !default;
+$zi-popover:           1060 !default;
+$zi-tooltip:           1070 !default;
+
+
+//child ol ul margin
+$olulm: 18px;
+
+//border radius 1-6 each has *5px
+$radius: 5px;
+

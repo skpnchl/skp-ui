@@ -3,10 +3,11 @@
   padding: 0;
   font: inherit;
   vertical-align: baseline;
+  transition: all 100ms ease;
 }
 
 html {
-  font-family: sans-serif;
+  font-family: $global-font;
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -154,7 +155,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: $google-font;
+  font-family: inherit;
   font-size: 100%;
 }
 
@@ -230,7 +231,7 @@ summary {
   display: list-item;
 }
 
-[hidden] {
+[hidden], .hidden {
   display: none !important;
 }
 
