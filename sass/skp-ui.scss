@@ -1,6 +1,8 @@
-@import "util/_variable";
-@import "util/_base";
-@import "util/_mixins";
-@import "util/_clearfix";
+@import "util/variable";
+@import "util/base";
+@import "util/mixins";
+@import "util/clearfix";
 @import "util/contain";
-@import "util/_grid";
+@import "util/flex";
+@import "util/classes";
+@import "util/grid";

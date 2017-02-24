@@ -1,0 +1,55 @@
+// Flex
+$fd: (row, row-reverse, column, column-reverse);
+$fw: (nowrap, wrap, wrap-reverse);
+$jc: (flex-start, flex-end, center, space-between, space-around);
+$ai: (flex-start, flex-end, center, baseline, stretch);
+$ac: (flex-start, flex-end, center, space-between, space-around, stretch);
+$as: (auto, flex-start, flex-end, center, baseline, stretch);
+
+
+@mixin flex($pre) {
+  @each $val in $fd {
+    .fd#{$pre}#{$val} {
+      flex-direction: $val;
+    }
+  }
+
+  @each $val in $fw {
+    .fw#{$pre}#{$val} {
+      flex-wrap: $val;
+    }
+  }
+
+  @each $val in $jc {
+    .jc#{$pre}#{$val} {
+      justify-content: $val;
+    }
+  }
+
+  @each $val in $ai {
+    .ai#{$pre}#{$val} {
+      align-items: $val;
+    }
+  }
+
+  @each $val in $ac {
+    .ac#{$pre}#{$val} {
+      align-content: $val;
+    }
+  }
+
+  @each $val in $as {
+    .as#{$pre}#{$val} {
+      align-self: $val;
+    }
+  }
+}
+
+@include flex("-");
+.flex {
+  display: flex !important;
+}
+
+.inline-flex {
+  display: inline-flex !important;
+}

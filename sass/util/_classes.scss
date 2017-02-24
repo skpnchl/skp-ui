@@ -1,0 +1,167 @@
+.vertical-align-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.circle {
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+$display: (block, inline, inline-block);
+
+@each $prop in $display {
+  .#{$prop} {
+    display: $prop !important;
+  }
+}
+
+.invisible {
+  visibility: hidden !important;
+}
+
+.hide-text {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.fixed-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.float-right {
+  float: right !important;
+}
+
+.float-left {
+  float: left !important;
+}
+
+// color for warning
+@mixin warning($sel, $prop, $color) {
+  @if ($prop == background-color) {
+    .bg-#{$sel} {
+      #{$prop}: $color;
+    }
+  } @else if ($prop == color) {
+    .tx-#{$sel} {
+      #{$prop}: $color;
+    }
+  } @else {
+
+  }
+}
+
+@each $prop, $val in $color-warning {
+  @include warning($prop, background-color, $val);
+  @include warning($prop, color, $val);
+}
+
+//max widht height and and
+
+@each $val in $width-height {
+  .mw-#{$val} {
+    max-width: percentage($val/100);
+  }
+  .w-#{$val} {
+    width: percentage($val/100);
+  }
+  .mh-#{$val} {
+    max-height: percentage($val/100);
+  }
+  .w-#{$val} {
+    height: percentage($val/100);
+  }
+}
+
+// margin or padding
+@mixin mp($s, $p) {
+  @each $prop, $val in $mp {
+    .#{$s}-#{$prop} {
+      #{$p}: $val !important;
+    }
+
+    .#{$s}x-#{$prop} {
+      #{$p}-left: $val !important;
+      #{$p}-right: $val !important;
+    }
+
+    .#{$s}y-#{$prop} {
+      #{$p}-top: $val !important;
+      #{$p}-bottom: $val !important;
+    }
+
+    @each $prop2, $val2 in $pos {
+      .#{$s}#{$val2}-#{$prop} {
+        #{$p}-#{$prop2}: $val !important;
+      }
+
+    }
+  }
+  .#{$s}-0 {
+    #{$p}: 0 !important;
+  }
+
+  .#{$s}x-0 {
+    #{$p}-left: 0 !important;
+    #{$p}-right: 0 !important;
+  }
+
+  .#{$s}y-0 {
+    #{$p}-top: 0 !important;
+    #{$p}-bottom: 0 !important;
+  }
+
+  @each $prop2, $val2 in $pos {
+    .#{$s}#{$val2}-0 {
+      #{$p}-#{$prop2}: 0 !important;
+    }
+
+  }
+}
+
+@include mp(m, margin);
+@include mp(p, padding);
+
+//text
+
+@each $val in $text-transform {
+  .#{$val} {
+    text-transform: $val !important;
+  }
+}
+
+@mixin text-align($break) {
+  @each $val in $text-align {
+    .txt#{$break}#{$val} {
+      text-align: $val !important;
+    }
+  }
+}
+
+@include text-align('-');
+
+//font weight
+@each $val in $font-weight {
+  .font-#{$val} {
+    font-weight: $val !important;
+  }
+}
+
+.font-italic {
+  font-style: italic;
+}

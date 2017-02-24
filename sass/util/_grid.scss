@@ -68,5 +68,7 @@
     @include lf(right, right-#{$key});
     @include lf(left, left-#{$key});
     @include lf(margin-left, offset-#{$key});
+    @include flex(-#{$key}-);
+    @include text-align(-#{$key}-)
   }
 }
