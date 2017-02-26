@@ -1,0 +1,42 @@
+$black-dark: #1F1F21;
+$white: #F2F2F2;
+$white1: #F7F7F7;
+$elegant-color-dark: #212121;
+$elegant-color: #2E2E2E;
+$apple-red: rgb(255, 59, 48);
+$apple-orange: rgb(255, 149, 0);
+$apple-yellow: rgb(255, 204, 0);
+$apple-green: rgb(76, 217, 100);
+$apple-teal-blue: rgb(90, 200, 250);
+$apple-blue: rgb(0, 122, 255);
+$apple-purple: rgb(88, 86, 214);
+$apple-pink: rgb(255, 45, 85);
+
+
+$list-color: (
+        red: $apple-red,
+        orange: $apple-orange,
+        yellow: $apple-yellow,
+        green: $apple-green,
+        teal-blue: $apple-teal-blue,
+        blue: $apple-blue,
+        purple: $apple-purple,
+        pink: $apple-pink,
+        fff : #fff,
+        000 : #000,
+        white-dark: $white,
+        whitel: $white1,
+        black-dark: $black-dark,
+        elegant: $elegant-color,
+        elegant-dark: $elegant-color-dark,
+        transparent: transparent
+        );
+
+@each $p, $v in $list-color{
+  .bg-#{$p}{
+    background-color: $v !important;
+  }
+  .txt-#{$p}{
+    color: $v !important;
+  }
+}

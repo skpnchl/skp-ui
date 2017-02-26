@@ -42,12 +42,10 @@ gulp.task('ts', function () {
 
 gulp.task('default', function(){
 	browserSync.init({
-    server: false
+        server: true
   });
 
 	gulp.watch(['sass/moduls/*.scss', 'sass/util/*.scss'], ['sass']);
-	gulp.watch('index.html',function () {
-        browserSync.stream()
-    })
+	gulp.watch('./index.html').on('change', browserSync.reload);
 
 });

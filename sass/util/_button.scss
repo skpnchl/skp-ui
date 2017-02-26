@@ -1,0 +1,35 @@
+@mixin button($s, $c, $tc){
+  .button#{$s} {
+    position: relative;
+    color: $tc;
+    padding: 5px 10px;
+    background: $c;
+    text-decoration: none;
+    line-height: normal;
+    user-select: none;
+    cursor: pointer;
+    &:active{
+      background: darken($c, 25%);
+    }
+  }
+}
+
+@include button('', $white1, $black-dark);
+@include button('-red', $apple-red, $white1);
+@include button('-orange', $apple-orange, $white1);
+@include button('-yellow', $apple-yellow, $black-dark);
+@include button('-green', $apple-green, $white1);
+@include button('-blue', $apple-blue, $white1);
+@include button('-pink', $apple-pink, $white1);
+@include button('-black', $elegant-color-dark, $white1);
+
+
+.button-small{
+  padding: 3px 8px !important;
+  font-size: smaller !important;
+}
+
+.button-big{
+  padding: 5px 13px !important;
+  font-size: larger !important;
+}

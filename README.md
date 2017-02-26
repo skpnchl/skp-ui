@@ -16,13 +16,17 @@ vertically center with **flex box**
 circle any eliment with overflow hidden
 #### .img-full
 full width image
+
+#### .overflow-hidden
+overflow hidden
+
 #### .select-none
 user select none
 
 #### .invisible
 for visibility hidden
 
-#### .fixed-top & .fixed-bottom
+#### .fixed-top and .fixed-bottom
 position fixed
 
 #### .float-left .float-right
@@ -33,6 +37,13 @@ for hiding only text
 
 #### .margin-auto
 align eliment to center
+
+#### .select-none
+user select none
+
+#### .content-box .border-box
+box sizing
+
 
 #### .heading-```1 to 4```
 each number multiply by ```1*1.20em```
@@ -303,3 +314,24 @@ after cl
 .cl-```m```-3
 
 .cl-```l```-5
+
+
+## button
+
+```
+//color
+<div class="button border-radius-1">Button</div>
+<div class="button-red border-radius-1">Button</div>
+<div class="button-orange border-radius-1">Button</div>
+<div class="button-yellow border-radius-1">Button</div>
+<div class="button-green border-radius-1">Button</div>
+<div class="button-blue border-radius-1">Button</div>
+<div class="button-pink border-radius-1">Button</div>
+<div class="button-black border-radius-1">Button</div>
+
+//size
+<div class="button-red button-big border-radius-1">Button</div>
+<div class="button-orange button-small border-radius-1">Button</div>
+
+
+```
